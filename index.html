@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponge Coins</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Экран загрузки -->
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <div class="loading-text">Loading</div> <!-- Добавленный текст -->
+    </div>
+
+    <!-- Значок с очками за оффлайн время -->
+    <div class="offline-points-display" id="offline-points-display">
+      <img src="./assets/viewhour_money.png" alt="Offline Points" id="viewhour-money" />
+      <div class="points-tooltip hidden" id="points-tooltip">0 очков за 10 минут</div>
+    </div>
+
+    <div class="game">
+      <div class="header">
+        <img src="./assets/coin.png" alt="coin" />
+        <h2 class="score" id="score">42</h2>
+      </div>
+      <div class="circle">
+        <img id="circle" src="./assets/frog.png" alt="frog" />
+      </div>
+      <div class="upgrades">
+        <img id="upgrade-btn" src="./assets/upgrade_icon.png" alt="Upgrade" />
+      </div>
+    </div>
+
+    <!-- Кастомное диалоговое окно -->
+    <div id="custom-dialog" class="dialog hidden">
+      <div class="dialog-content">
+        <img src="./assets/dialog.png" alt="dialog" class="dialog-bg" />
+        <p class="dialog-message"></p>
+        <!-- Замена кнопки на изображение -->
+        <img src="./assets/okay.png" alt="OK" class="dialog-button" id="dialog-ok-button" />
+      </div>
+    </div>
+
+    <!-- Иконка энергии и информация -->
+    <div class="energy-display" id="energy-display">
+      <img src="./assets/lightning.7a770ed879f33c747d6b.png" alt="Energy" id="energy-icon" />
+      <div class="energy-info" id="energy-info">1000 / 1000</div>
+    </div>
+
+    <script src="app.js" defer></script>
+    <script src="loading.js"></script>
+  </body>
+</html>

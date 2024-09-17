@@ -1,0 +1,258 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/main_tg.webp'); /* Замените на bg_tg.png, если нужно */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Стили для экрана загрузки */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/bg_tg.gif'); /* Замените на bg_tg.png, если нужно */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Столбец */
+  z-index: 9999;
+}
+
+.loader {
+  border: 16px solid rgba(243, 243, 243, 0.3); /* Полупрозрачный цвет для границы */
+  border-top: 16px solid #3498db; /* Синий */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили для текста загрузки */
+.loading-text {
+  margin-top: 16px; /* Расстояние между кругом и текстом */
+  color: #fff; /* Белый цвет текста */
+  font-size: 18px; /* Размер текста */
+  font-weight: 600; /* Полужирный текст */
+  font-family: 'Inter', sans-serif; /* Семейство шрифтов */
+}
+
+/* Исходные стили */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  margin-right: 14px;
+}
+
+.score {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  user-select: none;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px 0px rgba(138, 143, 254, 0.05);
+  transition: transform 0.2s ease;
+  --tiltX: 0deg;
+  --tiltY: 0deg;
+  transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+}
+
+.plus-one {
+  position: absolute;
+  font-family: Inter;
+  text-shadow: 0px 0px 4px rgba(234, 182, 64, 0.25);
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(180deg, #e8c547 0%, #ef882b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  user-select: none;
+  animation: move-up 2s forwards;
+}
+
+@keyframes move-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+/* Стили для кнопки улучшения */
+.upgrades {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+#upgrade-btn {
+  width: 80px; /* Размер кнопки улучшения */
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#upgrade-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Стили для кастомного диалогового окна */
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.dialog-content {
+  position: relative;
+  width: 400px; /* Размер диалогового окна */
+  text-align: center;
+}
+
+.dialog-bg {
+  width: 100%; /* Подгоняем под размер окна */
+  border-radius: 8px;
+}
+
+.dialog-message {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Обновленные стили для кнопки диалогового окна */
+.dialog-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px; /* Установите ширину для изображения кнопки */
+  height: auto; /* Соотношение сторон изображения */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dialog-button:hover {
+  transform: scale(1.1); /* Немного увеличивает кнопку при наведении */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Стили для значка отображения оффлайн очков */
+.offline-points-display {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 140px; /* Размер значка */
+  height: 50px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.offline-points-display img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.offline-points-display img:hover {
+  transform: scale(1.1);
+}
+
+/* Стили для подсказки с очками */
+.points-tooltip {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none; /* По умолчанию скрыта */
+}
+
+.offline-points-display:hover .points-tooltip {
+  display: block; /* Показывается при наведении */
+}
+
+/* Стили для значка энергии и информации */
+.energy-display {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 10001;
+}
+
+.energy-display img {
+  width: 20px;
+  height: 20px;
+}
+
+.energy-info {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+}
