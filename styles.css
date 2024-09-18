@@ -90,6 +90,16 @@ body {
   --tiltX: 0deg;
   --tiltY: 0deg;
   transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+  pointer-events: none; /* Отключаем любые взаимодействия мышью */
+  -webkit-user-drag: none; /* Запрет на перетаскивание изображения */
+  user-select: none; /* Запрет на выделение изображения */
+}
+
+/* Универсальные стили для всех изображений, чтобы запретить скачивание */
+img {
+  -webkit-user-drag: none; /* Запрет на перетаскивание */
+  user-select: none; /* Запрет на выделение */
+  pointer-events: none; /* Запрет на взаимодействие */
 }
 
 .plus-one {
