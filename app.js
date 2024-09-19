@@ -3,7 +3,7 @@ const $score = document.querySelector('#score');
 const $upgradeBtn = document.querySelector('#upgrade-btn');
 let pointsPerClick = 1;
 const OFFLINE_POINT_INTERVAL = 60 * 60 * 1000; // 60 минут в миллисекундах
-const POINTS_PER_OFFLINE_INTERVAL = 200000; // Очки, присуждаемые каждые 60 минут оффлайн
+const POINTS_PER_OFFLINE_INTERVAL = 0; // Очки, присуждаемые каждые 60 минут оффлайн
 
 let maxEnergy = 1000;
 let currentEnergy = maxEnergy;
