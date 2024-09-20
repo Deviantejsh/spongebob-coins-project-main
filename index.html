@@ -20,36 +20,36 @@
     </div>
 
     <!-- Значок с очками за оффлайн время -->
-    <div class="offline-points-display no-right-click" id="offline-points-display">
-      <img src="./assets/viewhour_money.png" alt="Offline Points" id="viewhour-money" />
+    <div class="offline-points-display no-right-click hidden" id="offline-points-display">
+      <img src="./assets/viewhour_money.png" alt="Offline Points" id="viewhour-money" draggable="false" />
       <div class="points-tooltip hidden" id="points-tooltip">0 очков за 10 минут</div>
     </div>
 
     <div class="game">
       <div class="header no-right-click">
-        <img src="./assets/coin.png" alt="coin" />
+        <img src="./assets/coin.png" alt="coin" draggable="false" />
         <h2 class="score" id="score">42</h2>
       </div>
       <div class="circle no-right-click">
-        <img id="circle" src="./assets/frog.png" alt="frog" />
+        <img id="circle" src="./assets/frog.png" alt="frog" draggable="false" />
       </div>
       <div class="upgrades">
-        <img id="upgrade-btn" src="./assets/upgrade_icon.png" alt="Upgrade" />
+        <img id="upgrade-btn" src="./assets/upgrade_icon.png" alt="Upgrade" draggable="false" />
       </div>
     </div>
 
     <!-- Кастомное диалоговое окно -->
     <div id="custom-dialog" class="dialog hidden no-right-click">
       <div class="dialog-content">
-        <img src="./assets/dialog.png" alt="dialog" class="dialog-bg" />
+        <img src="./assets/dialog.png" alt="dialog" class="dialog-bg" draggable="false" />
         <p class="dialog-message"></p>
-        <img src="./assets/okay.png" alt="OK" class="dialog-button" id="dialog-ok-button" />
+        <img src="./assets/okay.png" alt="OK" class="dialog-button" id="dialog-ok-button" draggable="false" />
       </div>
     </div>
 
     <!-- Иконка энергии и информация -->
-    <div class="energy-display no-right-click" id="energy-display">
-      <img src="./assets/lightning.7a770ed879f33c747d6b.png" alt="Energy" id="energy-icon" />
+    <div class="energy-display no-right-click hidden" id="energy-display">
+      <img src="./assets/lightning.7a770ed879f33c747d6b.png" alt="Energy" id="energy-icon" draggable="false" />
       <div class="energy-info" id="energy-info">1000 / 1000</div>
     </div>
 
